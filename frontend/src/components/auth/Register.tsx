@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { useAuth } from '../../contexts/AuthContext';
 import { RegisterCredentials } from '../../types/auth';
@@ -160,27 +160,6 @@ const Button = styled.button`
   }
 `;
 
-const ErrorMessage = styled.div`
-  color: #e74c3c;
-  text-align: center;
-  margin-top: 15px;
-  font-size: 14px;
-  background: #fdf2f2;
-  padding: 12px 16px;
-  border-radius: 8px;
-  border: 1px solid #f5c6cb;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  
-  &::before {
-    content: "⚠️";
-    font-size: 16px;
-  }
-`;
-
 const SuccessMessage = styled.div`
   color: #27ae60;
   text-align: center;
@@ -190,28 +169,6 @@ const SuccessMessage = styled.div`
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #27ae60;
-`;
-
-const LinkText = styled.p`
-  text-align: center;
-  margin-top: 20px;
-  color: #666;
-
-  a {
-    color: #667eea;
-    text-decoration: none;
-    font-weight: 500;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
-
-const PasswordHelp = styled.div`
-  font-size: 12px;
-  color: #666;
-  margin-top: 4px;
 `;
 
 const ValidationCheck = styled.div<{ $isValid: boolean }>`

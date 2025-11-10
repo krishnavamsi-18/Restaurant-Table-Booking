@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation as useRouterLocation } from 'react-router-dom';
 import styled from 'styled-components';
-import { Restaurant, LocationData } from '../../types/restaurant';
+import { Restaurant } from '../../types/restaurant';
 import apiService from '../../services/api';
 import { useAuth } from '../../contexts/AuthContext';
 import { useLocation } from '../../contexts/LocationContext';
@@ -25,47 +25,14 @@ const Header = styled.div`
   box-sizing: border-box;
 `;
 
-const HeaderTop = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  flex-wrap: wrap;
-  gap: 15px;
-`;
-
 const Title = styled.h1`
   color: #333;
   font-size: 28px;
   font-weight: 600;
-  margin: 0;
+  margin: 0 0 20px 0;
 `;
 
-const UserInfo = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 15px;
-`;
 
-const UserName = styled.span`
-  color: #666;
-  font-weight: 500;
-`;
-
-const LogoutButton = styled.button`
-  background: #e74c3c;
-  color: white;
-  border: none;
-  padding: 8px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: background 0.2s ease;
-
-  &:hover {
-    background: #c0392b;
-  }
-`;
 
 const SearchBar = styled.input`
   width: 100%;
@@ -85,17 +52,6 @@ const SearchBar = styled.input`
   &::placeholder {
     color: #999;
   }
-`;
-
-const LocationInfo = styled.div`
-  background: #e8f5e8;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  border-left: 4px solid #27ae60;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 `;
 
 const LocationText = styled.span`
@@ -118,21 +74,6 @@ const FilterContainer = styled.div`
   gap: 15px;
   margin-bottom: 15px;
   flex-wrap: wrap;
-`;
-
-const FilterSelect = styled.select`
-  padding: 10px 15px;
-  border: 2px solid #e1e8ed;
-  border-radius: 8px;
-  font-size: 14px;
-  outline: none;
-  background: white;
-  cursor: pointer;
-  transition: border-color 0.3s ease;
-
-  &:focus {
-    border-color: #667eea;
-  }
 `;
 
 const ClearFiltersButton = styled.button`
@@ -292,13 +233,13 @@ const NavButton = styled.button`
   }
 `;
 
-  const RestaurantList: React.FC = () => {
+const RestaurantList: React.FC = () => {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState<Restaurant[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string>('');
-  const { user, logout } = useAuth();
+  const { logout } = useAuth();
   const { location: currentLocation } = useLocation();
   const navigate = useNavigate();
   const routerLocation = useRouterLocation();
@@ -568,9 +509,7 @@ const NavButton = styled.button`
   return (
     <Container>
       <Header>
-        <HeaderTop>
-          <Title>Discover Restaurants</Title>
-        </HeaderTop>
+        <Title>Discover Restaurants</Title>
         <SearchBar
           type="text"
           placeholder="Search restaurants..."

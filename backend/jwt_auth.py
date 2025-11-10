@@ -6,7 +6,7 @@ Handles JWT token creation, validation, and password hashing
 
 import os
 from datetime import datetime, timedelta, timezone
-from typing import Optional, Union
+from typing import Optional
 from jose import JWTError, jwt
 from passlib.context import CryptContext
 from fastapi import HTTPException, status, Depends

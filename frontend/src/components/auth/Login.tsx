@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { useAuth } from '../../contexts/AuthContext';
 import { LoginCredentials } from '../../types/auth';
@@ -157,23 +157,6 @@ const Button = styled.button`
     transform: none;
     box-shadow: none;
   }
-`;
-
-const ErrorMessage = styled.div`
-  color: #e74c3c;
-  text-align: center;
-  margin: 15px 0;
-  font-size: 14px;
-  background: #fff5f5;
-  padding: 12px 16px;
-  border-radius: 8px;
-  border: 2px solid #e74c3c;
-  font-weight: 600;
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 10;
 `;
 
 const LinkText = styled.p`
