@@ -93,7 +93,7 @@ const SuccessMessage = styled.div`
 const LocationAccess: React.FC = () => {
   const [error, setError] = useState<string>('');
   const [success, setSuccess] = useState<string>('');
-  const { location, isLocationLoading, requestLocation, setLocation } = useLocation();
+  const { location, isLocationLoading, requestLocation } = useLocation();
   const navigate = useNavigate();
 
   useEffect(() => {

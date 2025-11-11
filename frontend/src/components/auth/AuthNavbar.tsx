@@ -43,28 +43,6 @@ const NavLinks = styled.div`
   gap: 1rem;
 `;
 
-const NavLink = styled(Link)<{ $isActive?: boolean }>`
-  color: white;
-  text-decoration: none;
-  padding: 0.5rem 1rem;
-  border-radius: 25px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  background: ${props => props.$isActive ? 'rgba(255, 255, 255, 0.2)' : 'transparent'};
-  border: 1px solid ${props => props.$isActive ? 'rgba(255, 255, 255, 0.3)' : 'transparent'};
-  
-  &:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-1px);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  }
-  
-  @media (max-width: 768px) {
-    padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
-  }
-`;
-
 const ActionButton = styled(Link)<{ $variant?: 'primary' | 'secondary' }>`
   padding: 0.7rem 2rem;
   border-radius: 30px;

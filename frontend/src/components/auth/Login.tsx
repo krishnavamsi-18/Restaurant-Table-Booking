@@ -159,22 +159,6 @@ const Button = styled.button`
   }
 `;
 
-const LinkText = styled.p`
-  text-align: center;
-  margin-top: 20px;
-  color: #666;
-
-  a {
-    color: #667eea;
-    text-decoration: none;
-    font-weight: 500;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-`;
-
 const Login: React.FC = () => {
   const [credentials, setCredentials] = useState<LoginCredentials>({
     email: '',
