@@ -10,6 +10,7 @@ from datetime import datetime, timedelta
 import logging
 import re
 import os
+import math
 from difflib import SequenceMatcher
 from restaurant_hours_utils import get_restaurant_status_summary, is_restaurant_open, format_operating_hours
 from reservation_utils import validate_reservation_time, generate_available_time_slots
