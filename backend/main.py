@@ -26,8 +26,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # MongoDB configuration
-MONGODB_URL = os.getenv("MONGODB_URL", "mongodb://localhost:27017")
-DATABASE_NAME = os.getenv("DATABASE_NAME", "restaurant_reservation_db")
+MONGODB_URL = os.getenv("MONGODB_URL") or os.getenv("MONGODB_URI", "mongodb://localhost:27017")
+DATABASE_NAME = os.getenv("DATABASE_NAME") or os.getenv("MONGODB_DATABASE", "restaurant_reservation_db")
 
 # Create FastAPI app
 app = FastAPI(
