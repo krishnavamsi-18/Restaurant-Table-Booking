@@ -9,6 +9,7 @@ from bson import ObjectId
 from datetime import datetime, timedelta
 import logging
 import re
+import os
 from difflib import SequenceMatcher
 from restaurant_hours_utils import get_restaurant_status_summary, is_restaurant_open, format_operating_hours
 from reservation_utils import validate_reservation_time, generate_available_time_slots
@@ -25,8 +26,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # MongoDB configuration
-MONGODB_URL = "mongodb://localhost:27017"
-DATABASE_NAME = "restaurant_reservation_db"
+MONGODB_URL = os.getenv("MONGODB_URL", "mongodb://localhost:27017")
+DATABASE_NAME = os.getenv("DATABASE_NAME", "restaurant_reservation_db")
 
 # Create FastAPI app
 app = FastAPI(
